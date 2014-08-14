@@ -126,7 +126,8 @@ background-color:#ddd;
   overflow-y:auto;
 }
 .esriScalebar{
-  padding-left:15px;
+  padding-right: 55px;
+  padding-bottom: 11px;
 }
 /*styles for the top toolbar and buttons*/
 #toolbarContainer_bv{
@@ -183,10 +184,10 @@ background-image:none !important;
 }
 /*Style for company logo added to the map*/
 .logo{
-  bottom:16px;
+  bottom:55px;
   cursor:pointer;
   position:absolute;
-  right:5px;
+  right:20px;
   z-index:30;
 }
 .logo img{
