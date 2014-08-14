@@ -143,7 +143,7 @@ define([
                 //Define the proxy url for the app 
                 if (this.config.proxyurl) {
                     esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
-                    esriConfig.defaults.io.alwaysUseProxy = true;
+                    esriConfig.defaults.io.alwaysUseProxy = false; //change to true when configuring secure resources
                 }
 
                 //check sign-in status 

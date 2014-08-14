@@ -56,13 +56,13 @@
         i18n = dojo.i18n.getLocalization("esriTemplate","template");
         var  defaults = {
         //The ID for the map from ArcGIS.com
-        webmap: "ce20efa75f3b44f88a0a105d1cb44612",  //KWIN webmap: 56b788d27a69416dbb644444a8ae4261
+        	webmap: "56b788d27a69416dbb644444a8ae4261",  //KWIN webmap: 56b788d27a69416dbb644444a8ae4261 //webmap for authorization testing: ce20efa75f3b44f88a0a105d1cb44612
         //Modify this to point to your sharing service URL if you are using the portal
         sharingurl: "http://www.arcgis.com",//for example: "http://www.arcgis.com",
         
         ////When editing you need to specify a proxyurl (see below) if the service is on a different domain
         //Specify a proxy url if you will be editing, using the elevation profile or have secure services or web maps that are not shared with everyone.
-        proxyurl: "http://dd.maps.com/demos_4/DotNet/proxy.ashx", //http://localhost:14913/DotNet/proxy.ashx
+        proxyurl: "", //"http://dd.maps.com/demos_4/DotNet/proxy.ashx", //http://localhost:14913/DotNet/proxy.ashx
         //The id for the web mapping application item that contains configuration info - in most
         //cases this will be null.
         appid: "",
@@ -116,8 +116,8 @@
         //specify a group in ArcGIS.com that contains the basemaps to display in the basemap gallery
         //example: title:'ArcGIS Online Basemaps' , owner:esri
         basemapgroup: {
-          title: null,
-          owner: null
+        	title: null, //'AGOL_basemaps_simple_subset', //null
+          owner: null //'jessemaps' //null
         },
         //Enter the URL's to the geometry service, print task and geocode service. 
         helperServices: commonConfig.helperServices,
@@ -164,14 +164,14 @@
           text: ''
         },
         //specify the width of the panel that holds the editor, legend, details
-        leftpanewidth: 228,
+        leftpanewidth: 250,
         //Restrict the map's extent to the initial extent of the web map. When true users
         //will not be able to pan/zoom outside the initial extent.
         constrainmapextent: false,
         //Provide an image and url for a logo that will be displayed as a clickable image
         //in the lower right corner of the map. If nothing is specified then the esri logo will appear.
         customlogo: {
-          image: '',
+        	image: 'images/mdc/MapscomLogo_143x34.png',
           link: ''
         },
         //embed = true means the margins will be collapsed to just include the map no title or links
