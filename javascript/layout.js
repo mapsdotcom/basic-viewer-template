@@ -425,10 +425,13 @@ function initUI(response) {
     if (configOptions.displaylayerlist === true) {
         addLayerList(layers);
     }
+
     if (configOptions.displaybasemaps === true) {
         //add menu driven basemap gallery if embed = true
         if (configOptions.embed) {
-            addBasemapGalleryMenu();
+            //I'd rather keep the original basemap gallery for this project
+            //addBasemapGalleryMenu();
+            addBasemapGallery();
         } else {
             addBasemapGallery();
         }
