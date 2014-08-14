@@ -183,7 +183,7 @@ background-image:none !important;
 }
 /*Style for company logo added to the map*/
 .logo{
-  bottom:5px;
+  bottom:16px;
   cursor:pointer;
   position:absolute;
   right:5px;
