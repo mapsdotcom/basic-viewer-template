@@ -146,6 +146,7 @@ define([
                     esriConfig.defaults.io.alwaysUseProxy = false; //change to true when configuring secure resources
                 }
 
+              //We had to comment this part out to get the proxy working
                 //check sign-in status 
                 //IdentityManager.checkSignInStatus(this.config.sharingurl + "/sharing").then(lang.hitch(this,
                 //    function (credential) {
