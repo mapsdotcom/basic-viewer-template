@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -56,13 +56,14 @@
         i18n = dojo.i18n.getLocalization("esriTemplate","template");
         var  defaults = {
         //The ID for the map from ArcGIS.com
-        webmap: "f5b13dbed07c46cdb783cf361833aa6b",
+        webmap: "ce20efa75f3b44f88a0a105d1cb44612",  //KWIN webmap: 56b788d27a69416dbb644444a8ae4261
         //Modify this to point to your sharing service URL if you are using the portal
         sharingurl: "http://www.arcgis.com",//for example: "http://www.arcgis.com",
-        //The id for the web mapping application item that contains configuration info - in most
+        
         ////When editing you need to specify a proxyurl (see below) if the service is on a different domain
         //Specify a proxy url if you will be editing, using the elevation profile or have secure services or web maps that are not shared with everyone.
-        proxyurl: "",
+        proxyurl: "http://dd.maps.com/demos_4/DotNet/proxy.ashx", //http://localhost:14913/DotNet/proxy.ashx
+        //The id for the web mapping application item that contains configuration info - in most
         //cases this will be null.
         appid: "",
         //set to true to display the title
@@ -79,17 +80,17 @@
         //Optional tools - set to false to hide the tool
         //set to false to hide the zoom slider on the map
         displayslider: true,
-        displaymeasure: true,
+        displaymeasure: false,
         displaybasemaps: true,
         displayoverviewmap: true,
-        displayeditor: true,
+        displayeditor: false,
         displaylegend: true,
         displaysearch: true,
         displaylayerlist: true,
         displaybookmarks: true,
         displaydetails: true,
-        displaytimeslider: true,
-        displayprint: true,
+        displaytimeslider: false,
+        displayprint: false,
         displayprintlegend: false,
         displayeditortoolbar: false,
         displaymapwidgets:false, //deprecated. After the June 2014 release set displayHome and displayLocate instead
@@ -104,7 +105,7 @@
         //This option is used when the elevation chart is displayed to control what is displayed when users mouse over or touch the chart. When true, elevation gain/loss will be shown from the first location to the location under the cursor/finger.
         showelevationdifference: false,
         displayscalebar: true,
-        displayshare: true,
+        displayshare: false,
         //Set to true to display the left panel on startup. The left panel can contain the legend, details and editor. Set to true to
         //hide left panel on initial startup. 2
         leftPanelVisibility: true,
@@ -174,7 +175,7 @@
           link: ''
         },
         //embed = true means the margins will be collapsed to just include the map no title or links
-        embed: false
+        embed: true
       };
         var supportsLocalization = true;
         var app = new utilities.App(defaults, supportsLocalization);

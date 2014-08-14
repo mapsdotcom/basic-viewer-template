@@ -143,18 +143,18 @@ define([
                 //Define the proxy url for the app 
                 if (this.config.proxyurl) {
                     esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
-                    esriConfig.defaults.io.alwaysUseProxy = false;
+                    esriConfig.defaults.io.alwaysUseProxy = true;
                 }
 
                 //check sign-in status 
-                IdentityManager.checkSignInStatus(this.config.sharingurl + "/sharing").then(lang.hitch(this,
-                    function (credential) {
-                        return;
-                    },
-                    function (error) {
-                        return;
-                    })
-                );
+                //IdentityManager.checkSignInStatus(this.config.sharingurl + "/sharing").then(lang.hitch(this,
+                //    function (credential) {
+                //        return;
+                //    },
+                //    function (error) {
+                //        return;
+                //    })
+                //);
 
             },
 
