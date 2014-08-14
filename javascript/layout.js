@@ -413,7 +413,8 @@ function initUI(response) {
         }
         var scalebar = new esri.dijit.Scalebar({
             map: map,
-            scalebarUnit: scalebarUnits //metric, english or dual
+            scalebarUnit: scalebarUnits, //metric, english or dual
+            attachTo: "bottom-right" //Valid options are "top-right","bottom-right","top-center","bottom-center","bottom-left","top-left". The default value is "bottom-left".
         });
     }
 
@@ -913,6 +914,7 @@ function addLayerList(layers) {
                 label: layer.title,
                 checked: layer.visible,
                 onChange: function () {
+                    dojo.style(dojo.query("[aria-label=layerMenu]"), "display", "block");
                     if (layer.layer.featureCollection) {
                         //turn off all the layers in the feature collection even
                         //though only the  main layer is listed in the layer list 
@@ -922,7 +924,8 @@ function addLayerList(layers) {
                     } else {
                         layer.layer.setVisibility(!layer.layer.visible);
                     }
-
+                    dojo.style(dojo.query("[aria-label=layerMenu]"), "display", "block");
+                    //dojo.query("[aria-label=layerMenu]")
                 }
             }));
         });
@@ -937,6 +940,18 @@ function addLayerList(layers) {
         });
 
         dojo.byId('webmap-toolbar-center').appendChild(button.domNode);
+
+        //test toggle button
+        //var testlayerTb = new dijit.form.ToggleButton({
+        //    showLabel: true,
+        //    label: i18n.tools.layers.label,
+        //    title: i18n.tools.layers.title,
+        //    checked: true,
+        //    iconClass: 'esriLayerIcon',
+        //    id: 'TESTlegendButton'
+        //}, dojo.create('div'));
+
+        //dojo.byId('webmap-toolbar-left').appendChild(testlayerTb.domNode);
     }
 }
 
