@@ -192,6 +192,26 @@ background-image:none !important;
 .logo img{
   border:none;
 }
+/*Style for custom legend added to map*/
+#legendCustom{
+  bottom:10px;
+  position:absolute;
+  left:10px;
+  z-index:30;
+  background-color: white;
+  border: 1px solid gray;
+  webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(187,187,187,1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(187,187,187,1);
+  box-shadow: 0px 0px 3px 0px rgba(187,187,187,1);
+}
+.interior-graphics img{
+  border:none;
+  padding: 3px;
+}
+
 /*Styles for the toolbar buttons*/
  .esriBasemapIcon {
   background-image: url(../images/Basemap16.png);
