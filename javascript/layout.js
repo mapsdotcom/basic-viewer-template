@@ -499,7 +499,7 @@ function initUI(response) {
         });
         bc.addChild(cp2);
         if (configOptions.embed) {
-            dojo.style(dojo.byId("leftPane"), "width", configOptions.leftpanewidth);
+            dojo.style(dojo.byId("leftPane"), "width", configOptions.leftpanewidth + "px"); //added the "px" here to try to get this to show up
         } else {
             dojo.style(dojo.byId("leftPane"), "width", configOptions.leftpanewidth + "px");
         }
@@ -914,6 +914,7 @@ function addLayerList(layers) {
                 label: layer.title,
                 checked: layer.visible,
                 onChange: function () {
+                    //trying to keep the layer list open after a box is selected
                     dojo.style(dojo.query("[aria-label=layerMenu]"), "display", "block");
                     if (layer.layer.featureCollection) {
                         //turn off all the layers in the feature collection even
@@ -924,8 +925,8 @@ function addLayerList(layers) {
                     } else {
                         layer.layer.setVisibility(!layer.layer.visible);
                     }
+                    //trying to keep the layer list open after a box is selected
                     dojo.style(dojo.query("[aria-label=layerMenu]"), "display", "block");
-                    //dojo.query("[aria-label=layerMenu]")
                 }
             }));
         });
@@ -950,7 +951,6 @@ function addLayerList(layers) {
         //    iconClass: 'esriLayerIcon',
         //    id: 'TESTlegendButton'
         //}, dojo.create('div'));
-
         //dojo.byId('webmap-toolbar-left').appendChild(testlayerTb.domNode);
     }
 }
