@@ -70,7 +70,7 @@
     },
     layers: {
       title: "Display layer list",
-      label: "Layers"
+      label: "Toggle Map Layers"
     },
     search: {
       title: "Find address or place",

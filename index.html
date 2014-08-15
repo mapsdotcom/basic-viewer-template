@@ -55,8 +55,11 @@
 
         i18n = dojo.i18n.getLocalization("esriTemplate","template");
         var  defaults = {
-        //The ID for the map from ArcGIS.com
-        	webmap: "56b788d27a69416dbb644444a8ae4261",  //KWIN webmap: 56b788d27a69416dbb644444a8ae4261 //webmap for authorization testing: ce20efa75f3b44f88a0a105d1cb44612
+        	//The ID for the map from ArcGIS.com
+        	// KWIN webmap: c1f7b48714c444428f253575a2be4e00
+        	//Old KWIN webmap: 56b788d27a69416dbb644444a8ae4261
+        	//webmap for authorization testing: ce20efa75f3b44f88a0a105d1cb44612
+        	webmap: "c1f7b48714c444428f253575a2be4e00",
         //Modify this to point to your sharing service URL if you are using the portal
         sharingurl: "http://www.arcgis.com",//for example: "http://www.arcgis.com",
         
@@ -88,7 +91,7 @@
         displaysearch: true,
         displaylayerlist: true,
         displaybookmarks: false,
-        displaydetails: true,
+        displaydetails: false,
         displaytimeslider: false,
         displayprint: false,
         displayprintlegend: false,
@@ -164,7 +167,7 @@
           text: ''
         },
         //specify the width of the panel that holds the editor, legend, details
-        leftpanewidth: 250,
+        leftpanewidth: 285,
         //Restrict the map's extent to the initial extent of the web map. When true users
         //will not be able to pan/zoom outside the initial extent.
         constrainmapextent: false,
