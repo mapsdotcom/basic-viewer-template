@@ -143,7 +143,7 @@ define([
                 //Define the proxy url for the app 
                 if (this.config.proxyurl) {
                     esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
-                    esriConfig.defaults.io.alwaysUseProxy = false; //change to true when configuring secure resources
+                    esriConfig.defaults.io.alwaysUseProxy = true; //change to true when configuring secure resources
                 }
 
               //We had to comment this part out to get the proxy working
