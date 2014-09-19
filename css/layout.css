@@ -633,3 +633,9 @@ background-image:none !important;
 .customMenuPopup{
   overflow-y:auto !important;
 }
+
+#kellerWilliamsLogo {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
