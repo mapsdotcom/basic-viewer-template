@@ -361,25 +361,46 @@ function initUI(response) {
     var layers = response.itemInfo.itemData.operationalLayers;
 
 
+    dojo.connect(dojo.byId("CondoClass1"), 'change', function () {
+        changeLayerVisibility(layers[11]); //other condo
+    });
+    dojo.connect(dojo.byId("HouseClass1"), 'change', function () {
+        changeLayerVisibility(layers[7]); //other house
+    });
+    dojo.connect(dojo.byId("VacantClass1"), 'change', function () {
+        changeLayerVisibility(layers[3]); //vacant other
+    });
+
+    dojo.connect(dojo.byId("CondoClass2"), 'change', function () {
+        changeLayerVisibility(layers[10]); //other condo
+    });
+    dojo.connect(dojo.byId("HouseClass2"), 'change', function () {
+        changeLayerVisibility(layers[6]); //other house
+    });
+    dojo.connect(dojo.byId("VacantClass2"), 'change', function () {
+        changeLayerVisibility(layers[2]); //vacant other
+    });
+
+    dojo.connect(dojo.byId("CondoClass3"), 'change', function () {
+        changeLayerVisibility(layers[9]); //other condo
+    });
+    dojo.connect(dojo.byId("HouseClass3"), 'change', function () {
+        changeLayerVisibility(layers[5]); //other house
+    });
+    dojo.connect(dojo.byId("VacantClass3"), 'change', function () {
+        changeLayerVisibility(layers[1]); //vacant other
+    });
+
     dojo.connect(dojo.byId("CondoClass4"), 'change', function () {
-        changeLayerVisibility(layers[5]); //kw condo
+        changeLayerVisibility(layers[8]); //kw condo
     });
     dojo.connect(dojo.byId("HouseClass4"), 'change', function () {
         changeLayerVisibility(layers[4]); //kw house
     });
     dojo.connect(dojo.byId("VacantClass4"), 'change', function () {
-        changeLayerVisibility(layers[3]); //kw palm
+        changeLayerVisibility(layers[0]); //kw palm
     });
 
-    dojo.connect(dojo.byId("CondoClass3"), 'change', function () {
-        changeLayerVisibility(layers[1]); //other condo
-    });
-    dojo.connect(dojo.byId("HouseClass3"), 'change', function () {
-        changeLayerVisibility(layers[2]); //other house
-    });
-    dojo.connect(dojo.byId("VacantClass3"), 'change', function () {
-        changeLayerVisibility(layers[0]); //vacant other
-    });
 
     //constrain the extent
     if (configOptions.constrainmapextent) {
