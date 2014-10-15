@@ -340,11 +340,46 @@ function isValidExtent(extent) {
 
 }
 
+
+
+function changeLayerVisibility(layer) {
+    //alert("layer " + layer.title + " about to change - currently .visible=" + layer.visibility);
+    var layerToToggle = map.getLayer(layer.id);
+    
+    if (layer.visibility) {
+        layerToToggle.setVisibility(false);
+    }
+    else {
+        layerToToggle.setVisibility(true);
+    }
+    layer.visibility = !layer.visibility;
+}
+
 function initUI(response) {
     dojo.connect(dijit.byId('map'), 'resize', resizeMap);
     adjustPopupSize();
     var layers = response.itemInfo.itemData.operationalLayers;
 
+
+    dojo.connect(dojo.byId("CondoClass4"), 'change', function () {
+        changeLayerVisibility(layers[5]); //kw condo
+    });
+    dojo.connect(dojo.byId("HouseClass4"), 'change', function () {
+        changeLayerVisibility(layers[4]); //kw house
+    });
+    dojo.connect(dojo.byId("VacantClass4"), 'change', function () {
+        changeLayerVisibility(layers[3]); //kw palm
+    });
+
+    dojo.connect(dojo.byId("CondoClass3"), 'change', function () {
+        changeLayerVisibility(layers[1]); //other condo
+    });
+    dojo.connect(dojo.byId("HouseClass3"), 'change', function () {
+        changeLayerVisibility(layers[2]); //other house
+    });
+    dojo.connect(dojo.byId("VacantClass3"), 'change', function () {
+        changeLayerVisibility(layers[0]); //vacant other
+    });
 
     //constrain the extent
     if (configOptions.constrainmapextent) {
