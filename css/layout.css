@@ -222,6 +222,11 @@ background-image:none !important;
   right:10px;
 }
 
+.legendNote {
+  text-align: center;
+  font-weight: normal;
+}
+
 #legendCustom table {
   margin: 4px 5px 0px 2px; /*(t r b l)*/
 }
