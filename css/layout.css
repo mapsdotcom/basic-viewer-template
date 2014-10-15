@@ -194,10 +194,8 @@ background-image:none !important;
   border:none;
 }
 /*Style for custom legend added to map*/
-#legendCustom{
-  bottom:10px;
+.interior-graphics{
   position:absolute;
-  left:10px;
   z-index:30;
   background-color: white;
   border: 1px solid gray;
@@ -212,6 +210,187 @@ background-image:none !important;
   border:none;
   padding: 3px;
 }
+
+#legendCustom{
+  bottom:10px;
+  left:10px;
+  font-weight:bold;
+  font-size: 0.9em;
+}
+#legendStatic{
+  bottom:10px;
+  right:10px;
+}
+
+#legendCustom table {
+  margin: 4px 5px 0px 2px; /*(t r b l)*/
+}
+
+#legendCustom table tr:last-child {
+  border-top: 1px solid silver;
+}
+
+#legendCustom table tr td:first-child{
+  text-align:right;
+}
+
+/*Styles for the Custom Layer-Toggle Legend*/
+.legendColumnnHeader {
+  text-align:center;
+}
+
+.legendColumnnHeader.rotated {
+/* Safari */
+-webkit-transform: rotate(-45deg);
+
+/* Firefox */
+-moz-transform: rotate(-45deg);
+
+/* IE */
+-ms-transform: rotate(-45deg);
+
+/* Opera */
+-o-transform: rotate(-45deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.iconRow td {
+  text-align: center;
+}
+
+input[type=checkbox].condo, input[type=checkbox].house, input[type=checkbox].vacant {
+display:none;
+}
+       
+input[type=checkbox] + label
+{
+      
+height: 40px;
+width: 37px;
+display:inline-block;
+padding: 0 0 0 0px;
+text-align:center;
+}
+
+
+input[type=checkbox].condo + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/condo_lightgray_40.png');
+  background-size: 28px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+input[type=checkbox].house + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/house_lightgray_40.png');
+  background-size: 40px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+input[type=checkbox].vacant + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/palm_lightgray_40.png');
+  background-size: 37px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+   
+
+   
+#CondoClass4:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/condo_green_40.png');
+  background-size: 28px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#HouseClass4:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/house_green_40.png');
+  background-size: 40px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#VacantClass4:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/palm_green_40.png');
+  background-size: 37px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+    
+  
+#CondoClass3:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/condo_blue_40.png');
+  background-size: 28px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#HouseClass3:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/house_blue_40.png');
+  background-size: 40px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#VacantClass3:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/palm_blue_40.png');
+  background-size: 37px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#CondoClass2:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/condo_orange_40.png');
+  background-size: 28px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#HouseClass2:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/house_orange_40.png');
+  background-size: 40px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#VacantClass2:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/palm_orange_40.png');
+  background-size: 37px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#CondoClass1:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/condo_purple_40.png');
+  background-size: 28px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#HouseClass1:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/house_purple_40.png');
+  background-size: 40px 37px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#VacantClass1:checked + label
+{
+  background: url('http://dd.maps.com/demos/KellerWilliamsMarcoIsl/images/palm_purple_40.png');
+  background-size: 37px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 
 /*Styles for the toolbar buttons*/
  .esriBasemapIcon {

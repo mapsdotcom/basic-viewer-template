@@ -65,8 +65,8 @@
         
         ////When editing you need to specify a proxyurl (see below) if the service is on a different domain
         //Specify a proxy url if you will be editing, using the elevation profile or have secure services or web maps that are not shared with everyone.
-        proxyurl: "http://dd.maps.com/demos_4/DotNet/proxy.ashx",
-        //proxyurl: "http://localhost:17161/basic-viewer-template/DotNet/proxy.ashx",
+        //proxyurl: "http://dd.maps.com/demos_4/DotNet/proxy.ashx",
+        proxyurl: "http://localhost:17161/basic-viewer-template/DotNet/proxy.ashx",
         //The id for the web mapping application item that contains configuration info - in most
         //cases this will be null.
         appid: "",
@@ -239,9 +239,49 @@
               <!--If a logo is specified in config section then the logo will be added
               to the map-->
             </div>
+
 						<div id="legendCustom" class="interior-graphics">
+							<table>
+								<tr>
+									<td> </td>
+									<td class="legendColumnnHeader">Condo/<br />Multi-<br />Family</td>
+									<td class="legendColumnnHeader">Single-<br />Dwelling</td>
+									<td class="legendColumnnHeader">Vacant<br />Land</td>
+								</tr>
+								<tr class="iconRow">
+									<td>Under<br />$500K</td>
+										<td><input type='checkbox' name='CondoClass4' class="condo" value='CondoClass4' id="CondoClass4" checked="true"/><label for="CondoClass4"></label></td>
+										<td><input type='checkbox' name='HouseClass4' class="house" value='HouseClass4' id="HouseClass4" checked="true"/><label for="HouseClass4"></label></td>
+										<td><input type='checkbox' name='VacantClass4' class="vacant" value='VacantClass4' id="VacantClass4" checked="true"/><label for="VacantClass4"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>$500K-<br />$1M</td>
+										<td><input type='checkbox' name='CondoClass3' class="condo" value='CondoClass3' id="CondoClass3" checked="true"/><label for="CondoClass3"></label></td>
+										<td><input type='checkbox' name='HouseClass3' class="house" value='HouseClass3' id="HouseClass3" checked="true"/><label for="HouseClass3"></label></td>
+										<td><input type='checkbox' name='VacantClass3' class="vacant" value='VacantClass3' id="VacantClass3" checked="true"/><label for="VacantClass3"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>$1M-<br />$3M</td>
+										<td><input type='checkbox' name='CondoClass2' class="condo" value='CondoClass2' id="CondoClass2" checked="true"/><label for="CondoClass2"></label></td>
+										<td><input type='checkbox' name='HouseClass2' class="house" value='HouseClass2' id="HouseClass2" checked="true"/><label for="HouseClass2"></label></td>
+										<td><input type='checkbox' name='VacantClass2' class="vacant" value='VacantClass2' id="VacantClass2" checked="true"/><label for="VacantClass2"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>Over<br />$3M</td>
+										<td><input type='checkbox' name='CondoClass1' class="condo" value='CondoClass1' id="CondoClass1" checked="true"/><label for="CondoClass1"></label></td>
+										<td><input type='checkbox' name='HouseClass1' class="house" value='HouseClass1' id="HouseClass1" checked="true"/><label for="HouseClass1"></label></td>
+										<td><input type='checkbox' name='VacantClass1' class="vacant" value='VacantClass1' id="VacantClass1" checked="true"/><label for="VacantClass1"></label></td>
+								</tr>
+								<tr>
+									<td colspan="4"><img src="images/kwin/KellerWilliamsRealtyMarcoIsland_logo_200x44.png" alt="Keller Williams Marco Island" /></td>
+								</tr>
+							</table>
+						</div>
+
+						<div id="legendStatic" class="interior-graphics">
 							<img src="images/kwin/KWMI_legend3_transparent.png" alt="map legend" />
 						</div>
+
             <!--Floating window that contains the measure dijit-->
             <div id="floater">
               <div id="measureDiv"></div>
