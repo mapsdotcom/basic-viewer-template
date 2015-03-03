@@ -1,1 +1,0 @@
-Used http://instantsprite.com/ to make this sprite which also helps with the associated CSS
