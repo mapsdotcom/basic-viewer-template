@@ -239,6 +239,13 @@ background-image:none !important;
   text-align:right;
 }
 
+#legendCustom div.legendTitle{
+  text-align:center;
+  font-weight:bold;
+  font-size:1.5em;
+}
+
+
 /*Styles for the Custom Layer-Toggle Legend*/
 .legendColumnnHeader {
   text-align:center;
@@ -285,224 +292,150 @@ input[type=checkbox].legendIconSprite + label
   background: url('../images/kwmi/legendIconSprite.png') no-repeat top left;
 }
 
+/*Light Gray icons*/
 input[type=checkbox].condo + label
+{
+  background-position: -245px 0;
+  width: 30px; height: 40px;
+}
+input[type=checkbox].house + label
+{
+  background-position: -848px 0;
+  width: 43px; height: 39px;
+}
+input[type=checkbox].vacant + label
+{
+  background-position: -1546px 0;
+}
+
+/*Class6 = Yellow*/
+#CondoClass6:checked + label
+{
+  background-position: -490px 0;
+  width: 30px; height: 40px;
+}
+#HouseClass6:checked + label
+{
+  background-position: -1184px 0;
+  width: 43px; height: 39px;
+}
+#VacantClass6:checked + label
+{
+  background-position: -1854px 0;
+}
+
+/*Class5 = Green*/
+#CondoClass5:checked + label
+{
+  background-position: -175px 0;
+  width: 30px; height: 40px;
+}
+#HouseClass5:checked + label
+{
+  background-position: -752px 0;
+  width: 43px; height: 39px;
+}
+#VacantClass5:checked + label
+{
+  background-position: -1458px 0;
+}
+
+/*Class4 = Blue*/
+#CondoClass4:checked + label
 {
   background-position: 0 0;
   width: 30px; height: 40px;
 }
-input[type=checkbox].house + label
+#HouseClass4:checked + label
+{
+  background-position: -560px 0;
+  width: 43px; height: 39px;
+}
+#VacantClass4:checked + label
+{
+  background-position: -1280px 0;
+}
+    
+/*Class3 = Dark Blue*/
+#CondoClass3:checked + label
 {
   background-position: -35px 0;
-  width: 43px; height: 39px;
-}
-input[type=checkbox].vacant + label
-{
-  background-position: -83px 0;
-}
-
-/*Class4 = Green*/
-#CondoClass4:checked + label
-{
-  background-position: -197px 0;
-  width: 30px; height: 40px;
-}
-#HouseClass4:checked + label
-{
-  background-position: -573px 0;
-  width: 43px; height: 39px;
-}
-#VacantClass4:checked + label
-{
-  background-position: -1041px 0;
-}
-    
-/*Class3 = Blue*/
-#CondoClass3:checked + label
-{
-  background-position: -127px 0;
   width: 30px; height: 40px;
 }
 #HouseClass3:checked + label
 {
-  background-position: -477px 0;
+  background-position: -608px 0;
   width: 43px; height: 39px;
 }
 #VacantClass3:checked + label
 {
-  background-position: -953px 0;
+  background-position: -1324px 0;
 }
 
-/*Class2 = Orange*/
+/*Class2 = Purple*/
 #CondoClass2:checked + label
 {
-  background-position: -267px 0;
+  background-position: -350px 0;
   width: 30px; height: 40px;
 }
 #HouseClass2:checked + label
 {
-  background-position: -669px 0;
+  background-position: -992px 0;
   width: 43px; height: 39px;
 }
 #VacantClass2:checked + label
 {
-  background-position: -1129px 0;
+  background-position: -1678px 0;
 }
 
-/*Class1 = Purple*/
+/*Class1 = Red*/
 #CondoClass1:checked + label
 {
-  background-position: -337px 0;
+  background-position: -420px 0;
   width: 30px; height: 40px;
 }
 #HouseClass1:checked + label
 {
-  background-position: -765px 0;
+  background-position: -1084px 0;
   width: 43px; height: 39px;
 }
 #VacantClass1:checked + label
 {
-  background-position: -1217px 0;
-}
-
-/*input[type=checkbox].condo + label
-{
-  background: url('../images/kwmi/condo_lightgray_40.png');
-  background-size: 28px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-input[type=checkbox].house + label
-{
-  background: url('../images/kwmi/house_lightgray_40.png');
-  background-size: 40px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-input[type=checkbox].vacant + label
-{
-  background: url('../images/kwmi/palm_lightgray_40.png');
-  background-size: 37px 36px;
-  background-repeat: no-repeat;
-  background-position: center;
-}*/
-   
- 
-/*#CondoClass4:checked + label
-{
-  background: url('../images/kwmi/condo_green_40.png');
-  background-size: 28px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-#HouseClass4:checked + label
-{
-  background: url('../images/kwmi/house_green_40.png');
-  background-size: 40px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-#VacantClass4:checked + label
-{
-  background: url('../images/kwmi/palm_green_40.png');
-  background-size: 37px 36px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-    
-  
-#CondoClass3:checked + label
-{
-  background: url('../images/kwmi/condo_blue_40.png');
-  background-size: 28px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-#HouseClass3:checked + label
-{
-  background: url('../images/kwmi/house_blue_40.png');
-  background-size: 40px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-#VacantClass3:checked + label
-{
-  background: url('../images/kwmi/palm_blue_40.png');
-  background-size: 37px 36px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -1766px 0;
 }
 
 
-#CondoClass2:checked + label
+/*Class 10 = Orange*/
+#CondoClass10:checked + label
 {
-  background: url('../images/kwmi/condo_orange_40.png');
-  background-size: 28px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -280px 0;
+  height: 40px; height: 39px;
 }
-#HouseClass2:checked + label
+#HouseClass10:checked + label
 {
-  background: url('../images/kwmi/house_orange_40.png');
-  background-size: 40px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -896px 0;
+  width: 43px; height: 39px;
 }
-#VacantClass2:checked + label
+#VacantClass10:checked + label
 {
-  background: url('../images/kwmi/palm_orange_40.png');
-  background-size: 37px 36px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -1590px 0;
 }
 
-
-#CondoClass1:checked + label
+/*Class 11 = Yellow*/
+#CondoClass11:checked + label
 {
-  background: url('../images/kwmi/condo_purple_40.png');
-  background-size: 28px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -490px 0;
+  width: 30px; height: 40px;
 }
-#HouseClass1:checked + label
+#HouseClass11:checked + label
 {
-  background: url('../images/kwmi/house_purple_40.png');
-  background-size: 40px 37px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: -1184px 0;
+  width: 43px; height: 39px;
 }
-#VacantClass1:checked + label
+#VacantClass11:checked + label
 {
-  background: url('../images/kwmi/palm_purple_40.png');
-  background-size: 37px 36px;
-  background-repeat: no-repeat;
-  background-position: center;
-}*/
-
-
-/* Legend Icon Preloaders */
-/*
-
-input[type=checkbox].condo:before
-{
-  width:0;
-  height:0;
-  visibility:hidden;
-  position:absolute;
+  background-position: -1854px 0;
 }
-input[type=checkbox].condo:before
-{
-  content: url('../images/kwmi/condo_lightgray_40.png');
-}
-input[type=checkbox].house:before
-{
-  content: url('../images/kwmi/house_lightgray_40.png');
-}
-input[type=checkbox].vacant:before
-{
-  content: url('../images/kwmi/palm_lightgray_40.png');
-
-}
-*/
 
 /*Styles for the toolbar buttons*/
  .esriBasemapIcon {
@@ -930,3 +863,34 @@ input[type=checkbox].vacant:before
   top:0px;
   left:0px;
 }
+
+div.mls-map-switcher {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  height: 30px;
+  border: 1px solid white;
+  border-style: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color:white;
+  cursor: pointer;
+}
+div.mls-map-switcher:hover {
+  background-color: #e5f2fe;
+  color: #000000;
+  border: 1px solid #ffffff;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+div.mls-map-switcher span {
+  vertical-align: middle;
+  line-height: 30px;
+  text-align: center;
+  padding: 0 5px;
+}
+
+
