@@ -380,7 +380,7 @@ input[type=checkbox].vacant + label
 }
 #HouseClass2:checked + label
 {
-  background-position: -992px 0;
+  background-position: -991px 0;
   width: 43px; height: 39px;
 }
 #VacantClass2:checked + label
@@ -396,7 +396,7 @@ input[type=checkbox].vacant + label
 }
 #HouseClass1:checked + label
 {
-  background-position: -1084px 0;
+  background-position: -1087px 0;
   width: 43px; height: 39px;
 }
 #VacantClass1:checked + label
