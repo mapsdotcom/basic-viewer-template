@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Keller Williams Marco Island Realty - Property Locator Map</title>
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/dojo/dijit/themes/claro/document.css">
+
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/dojo/dojox/layout/resources/FloatingPane.css">
+
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/esri/css/esri.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <!--[if IE]>
+      <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+    <script type="text/javascript">
+    var path_location = location.pathname.replace(/\/[^/]+$/, '');
+    var dojoConfig = {
+      parseOnLoad: true,
+      packages: [{
+        name: "esriTemplate",
+        location: path_location
+      }, {
+        name: "utilities",
+        location: path_location + '/javascript'
+      }, {
+        name: "apl",
+        location: path_location + '/apl'
+      },{
+        name: "templateConfig",
+        location: path_location
+      }]
+    };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.10/">
+
+    </script>
+    <script type="text/javascript">
+      dojo.require("esri.layout");
+    </script>
+ 
+    <script type="text/javascript" src="javascript/layout.js">
+    </script>
+		<script type="text/javascript" src="javascript/layout-original-index.js">
+    </script>
+    <script type="text/javascript">
+      dojo.require("utilities.App");
+      dojo.require("dojo.on");
+      dojo.require("templateConfig.commonConfig");
+ 
+
+      var i18n;
+      dojo.ready(function(){
+
+
+        i18n = dojo.i18n.getLocalization("esriTemplate","template");
+        var  defaults = {
+        	//The ID for the map from ArcGIS.com
+        	// KWMI webmap: c1f7b48714c444428f253575a2be4e00
+        	//Old KWMI webmap: 56b788d27a69416dbb644444a8ae4261
+        	//webmap for authorization testing: ce20efa75f3b44f88a0a105d1cb44612
+        	//webmap for proof with just 6 layers (house-kw, house-other, condo-kw, condo-other, vacant-kw, vacant-other): c1f7b48714c444428f253575a2be4e00
+        	//webmap for 3rd proof: 6501c55424c6471581d98e0efe115297
+        	//webmap for TEST of Final version: 74654601f5a24f8d874cc6093b9539b8
+        	//webmap for Final version: "6501c55424c6471581d98e0efe115297",
+        	//webmap for TEST of New Version with Naples included: "8ac113196e0947199231d4432416efaa",
+        	webmap: "6501c55424c6471581d98e0efe115297",
+        //Modify this to point to your sharing service URL if you are using the portal
+        sharingurl: "http://www.arcgis.com",//for example: "http://www.arcgis.com",
+        
+        ////When editing you need to specify a proxyurl (see below) if the service is on a different domain
+        //Specify a proxy url if you will be editing, using the elevation profile or have secure services or web maps that are not shared with everyone.
+        //proxyurl: "http://dd.maps.com/demos_4/DotNet/proxy.ashx",
+        //proxyurl: "http://localhost:17161/basic-viewer-template/DotNet/proxy.ashx",
+        proxyurl: "http://kwmi.maps.com/DotNet/proxy.ashx",
+       //The id for the web mapping application item that contains configuration info - in most
+        //cases this will be null.
+        appid: "",
+        //set to true to display the title
+        displaytitle: true,
+        //Enter a title, if no title is specified, the webmap's title is used.
+        title: "",
+        //Enter a description for the application. This description will appear in the left pane
+        //if no description is entered the webmap description will be used.
+        description: "",
+        //specify an owner for the app - used by the print option. The default value will be the web map's owner
+        owner: '',
+        //Specify a color theme for the app. Valid options are gray,blue,purple,green and orange
+        theme: 'gray',
+        //Optional tools - set to false to hide the tool
+        //set to false to hide the zoom slider on the map
+        displayslider: true,
+        displaymeasure: false,
+        displaybasemaps: true,
+        displayoverviewmap: true,
+        displayeditor: false,
+        displaylegend: false,
+        displaysearch: true,
+        displaylayerlist: false,
+        displaybookmarks: false,
+        displaydetails: false,
+        displaytimeslider: false,
+        displayprint: false,
+        displayprintlegend: false,
+        displayeditortoolbar: false,
+        displaymapwidgets:false, //deprecated. After the June 2014 release set displayHome and displayLocate instead
+        home: true,
+        locate: true,
+        //i18n.viewer.main.scaleBarUnits,
+        //The elevation tool uses the  measurement tool to draw the lines. So if this is set
+        //to true then displaymeasure needs to be true too. NOTE: THis tool is deprecated and should no 
+        //longer be used in the Basic Viewer. Use the new version of the template instead
+        //https://github.com/Esri/elevation-profile-template
+        displayelevation: false,
+        //This option is used when the elevation chart is displayed to control what is displayed when users mouse over or touch the chart. When true, elevation gain/loss will be shown from the first location to the location under the cursor/finger.
+        showelevationdifference: false,
+        displayscalebar: true,
+        displayshare: false,
+        //Set to true to display the left panel on startup. The left panel can contain the legend, details and editor. Set to true to
+        //hide left panel on initial startup. 2
+        leftPanelVisibility: true,
+        //If the webmap uses Bing Maps data, you will need to provide your Bing Maps Key
+        bingmapskey: commonConfig.bingMapsKey,
+        //Get the default map units
+        units: commonConfig.units, 
+        //specify a group in ArcGIS.com that contains the basemaps to display in the basemap gallery
+        //example: title:'ArcGIS Online Basemaps' , owner:esri
+        basemapgroup: {
+        	title: null, //'AGOL_basemaps_simple_subset', //null
+          owner: null //'jessemaps' //null
+        },
+        //Enter the URL's to the geometry service, print task and geocode service. 
+        helperServices: commonConfig.helperServices,
+        //Set the label in the nls file for your browsers language
+        printlayouts: [{
+          layout: 'Letter ANSI A Landscape',
+          label: i18n.tools.print.layouts.label1,
+          format: 'PDF'
+        }, {
+          layout: 'Letter ANSI A Portrait',
+          label: i18n.tools.print.layouts.label2,
+          format: 'PDF'
+        }, {
+          layout: 'Letter ANSI A Landscape',
+          label: i18n.tools.print.layouts.label3,
+          format: 'PNG32'
+        }, {
+          layout: 'Letter ANSI A Portrait',
+          label: i18n.tools.print.layouts.label4,
+          format: 'PNG32'
+        }],
+        printlayout: false,
+        printformat: "PNG32",
+        //Specify the geocoder options. By default uses the geocoder widget with the default locators. If you specify a url value then that locator will be used.
+        placefinder: {
+          "url": "",
+          "countryCode":"",
+          "currentExtent":false,
+          "placeholder": "",
+          "singleLineFieldName":""
+        },
+        //when true locations searches use the current map extent. 
+        searchextent: false,
+        //Set link text and url parameters if you want to display clickable links in the upper right-corner
+        //of the application.
+        //ArcGIS.com. Enter link values for the link1 and link2 and text to add links. For example
+        //url:'http://www.esri.com',text:'Esri'
+        link1: {
+          url: '',
+          text: ''
+        },
+        link2: {
+          url: '',
+          text: ''
+        },
+        //specify the width of the panel that holds the editor, legend, details
+        leftpanewidth: 285,
+        //Restrict the map's extent to the initial extent of the web map. When true users
+        //will not be able to pan/zoom outside the initial extent.
+        constrainmapextent: false,
+        //Provide an image and url for a logo that will be displayed as a clickable image
+        //in the lower right corner of the map. If nothing is specified then the esri logo will appear.
+        customlogo: {
+        	image: 'images/mdc/KWRealtyMarcoIsland-Mapscom_logos-white.png', //Maps-logo-white-110x36.png //KWRealtyMarcoIsland-Mapscom_logos-white.png  //'images/mdc/MapscomLogo_143x34.png'  //"images/mdc/Maps-logo-white-110x36.png"
+          link: ''
+        },
+        //embed = true means the margins will be collapsed to just include the map no title or links
+        embed: true
+      };
+        var supportsLocalization = true;
+        var app = new utilities.App(defaults, supportsLocalization);
+        dojo.on(app, "ready", function(config){
+
+          initMap(config);
+        });
+
+      });
+
+    </script>
+  </head>
+
+  <body class="claro">
+		<div id="bc" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false"
+    style="width:100%; height:100%;padding:0;">
+      <!-- Header Section-->
+      <div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+        <!--Title dyanmically generated -->
+        <div id="nav" style='display:none;'>
+          <!-- links are dynamically generated-->
+          <ul>
+            <li id="link1List"></li>
+            <li>|</li>
+            <li id="link2List"></li>
+          </ul>
+        </div>
+      </div>
+      <!--End Header-->
+      <!-- Main Content Section (map, toolbars, left panel)-->
+      <div id="mainWindow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"
+      style="width:100%;height:100%;">
+        <div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:false"
+        style="width:100%;height:100%;padding:0;">
+          <!-- Toolbar (Search Basemap Measure)-->
+          <div id="toolbarContainer_bv" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"top"'>
+            <div data-dojo-type="dijit.Toolbar">
+              <div id="webmap-toolbar-left">
+                <!--Toolbar buttons (Legend, Details, Edit) created dynamically-->
+              </div>
+              <div id="webmap-toolbar-right">
+                <!--create the search tool-->
+              </div>
+              <div id="webmap-toolbar-center">
+                <!--Basemap,measure,share,time and layer list tools added if enabled-->
+              </div>
+            </div>
+          </div>
+          <!--End Toolbar-->
+          <!--Left Panel-->
+          <div data-dojo-type="dijit.layout.BorderContainer" id="leftPane" data-dojo-props="design:'headline', gutters:false,region:'left'"
+          style="height:100%;padding:0;display:none;"></div>
+          <!--End Left Panel-->
+          <!-- Map Section -->
+          <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"' dir="ltr">
+            <div id="logo" class="logo" style="display:none;">
+              <!--If a logo is specified in config section then the logo will be added
+              to the map-->
+            </div>
+
+						<div id="legendCustom" class="interior-graphics">
+							
+							<table>
+								<tr>
+									<td> </td>
+									<td class="legendColumnnHeader">Condo/<br />Multi-<br />Family</td>
+									<td class="legendColumnnHeader">Single-<br />Dwelling</td>
+									<td class="legendColumnnHeader">Vacant<br />Land</td>
+								</tr>
+								<tr class="iconRow">
+									<td>Under<br />$500K</td>
+										<td><input type='checkbox' name='CondoClass5' class="legendIconSprite condo" value='CondoClass5' id="CondoClass5" /><label for="CondoClass5"></label></td>
+										<td><input type='checkbox' name='HouseClass5' class="legendIconSprite house" value='HouseClass5' id="HouseClass5" checked="checked"/><label for="HouseClass5"></label></td>
+										<td><input type='checkbox' name='VacantClass5' class="legendIconSprite vacant" value='VacantClass5' id="VacantClass5" /><label for="VacantClass5"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>$500K-<br />$1M</td>
+										<td><input type='checkbox' name='CondoClass4' class="legendIconSprite condo" value='CondoClass4' id="CondoClass4" /><label for="CondoClass4"></label></td>
+										<td><input type='checkbox' name='HouseClass4' class="legendIconSprite house" value='HouseClass4' id="HouseClass4" checked="checked"/><label for="HouseClass4"></label></td>
+										<td><input type='checkbox' name='VacantClass4' class="legendIconSprite vacant" value='VacantClass4' id="VacantClass4" /><label for="VacantClass4"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>$1M-<br />$3M</td>
+										<td><input type='checkbox' name='CondoClass10' class="legendIconSprite condo" value='CondoClass10' id="CondoClass10" /><label for="CondoClass10"></label></td>
+										<td><input type='checkbox' name='HouseClass10' class="legendIconSprite house" value='HouseClass10' id="HouseClass10" checked="checked"/><label for="HouseClass10"></label></td>
+										<td><input type='checkbox' name='VacantClass10' class="legendIconSprite vacant" value='VacantClass10' id="VacantClass10" /><label for="VacantClass10"></label></td>
+								</tr>
+								<tr class="iconRow">
+									<td>Over<br />$3M</td>
+										<td><input type='checkbox' name='CondoClass2' class="legendIconSprite condo" value='CondoClass2' id="CondoClass2" /><label for="CondoClass2"></label></td>
+										<td><input type='checkbox' name='HouseClass2' class="legendIconSprite house" value='HouseClass2' id="HouseClass2" checked="checked"/><label for="HouseClass2"></label></td>
+										<td><input type='checkbox' name='VacantClass2' class="legendIconSprite vacant" value='VacantClass2' id="VacantClass2" /><label for="VacantClass2"></label></td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										<div class="legendNote">Click legend icons to toggle visibility</div>
+										<img src="images/kwmi/KellerWilliamsRealtyMarcoIsland_logo_200x44.png" alt="Keller Williams Marco Island" />
+
+									</td>
+								</tr>
+							</table>
+						</div>
+
+						<!--<div id="legendStatic" class="interior-graphics">
+							<img src="images/kwmi/KWMI_legend3_transparent.png" alt="map legend" />
+						</div>-->
+
+            <!--Floating window that contains the measure dijit-->
+            <div id="floater">
+              <div id="measureDiv"></div>
+            </div>
+            <!--Floating window contains the time slider-->
+            <div id="timeFloater" style='display:none;'></div>
+          </div>
+          <!--end Map section-->
+        </div>
+				<div id="kellerWilliamsLogo"><img src="images/kwmi/KellerWilliamsRealtyMarcoIsland_logoWhite_148x35.png" alt="Keller Williams Marco Island Realty" /></div>
+      </div>
+      <div id="bottomPane" dojotype="dijit.layout.ContentPane" region="bottom"
+      gutters="false" style="display:none;margin:10px 5px;width:auto;height:275px;background-color:white;"></div>
+      <!-- End Main Content section-->
+    </div>
+  </body>
+
+</html>
