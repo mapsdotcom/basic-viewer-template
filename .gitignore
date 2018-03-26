@@ -1,0 +1,4 @@
+#Keep proxy out of repository
+DotNet/
+
+*.suo
