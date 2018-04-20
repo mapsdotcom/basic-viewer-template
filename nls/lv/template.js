@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Nevar izveidot karti",
       bitly: 'bitly tiek izmantots, lai saīsinātu url uz koplietošanu. Apskatīt readme faila informāciju par bitly taustiņa izveidošanas un lietošanas detaļām',
       general: "Kļūda"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Pārslēgt pamatkarti",
     label: "Pamatkarte"
@@ -28,14 +28,14 @@
     share: {
     title: "Koplietot karti",
     label: "Koplietot",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Epasts",
         message: "Pārbaudiet šo karti"
       }    
@@ -55,7 +55,7 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "dd.MMMM.yyyy.",
+      datePattern: "dd.MM.yyyy.",
       yearPattern: "yyyy",
       hourTimePattern: "H a",
       minuteTimePattern: "HH:mm",
@@ -98,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Aizvērt paneli",
       label: "Aizvērt"
     }
