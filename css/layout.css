@@ -138,7 +138,7 @@ background-color:#ddd;
   overflow:visible;
   width:100% !important;
   padding:0px !important;
-  height:34px;
+  height:39px;
   margin:0;
   color:#fff;
 }
@@ -174,11 +174,13 @@ background-image:none !important;
 
 #webmap-toolbar-center {
   float: right;
+  padding-top: 3px;
 }
 
 #webmap-toolbar-right {
   float: right;
   width:250px;
+  padding-top: 3px;
 }
 #legendButton{
     color:#fff;
@@ -293,153 +295,148 @@ text-align:center;
 
 input[type=checkbox].legendIconSprite + label
 {
-  background: url('../images/kwmi/legendIconSprite.png') no-repeat top left;
+  background: url('../images/icons/legendIconSprite.png') no-repeat top left;
+  width: 30px; height: 40px;
 }
 
 /*Light Gray icons*/
 input[type=checkbox].condo + label
 {
-  background-position: -245px 0;
-  width: 30px; height: 40px;
+  background-position: 0 0;
+  /*width: 30px; height: 40px;*/
 }
 input[type=checkbox].house + label
 {
-  background-position: -848px 0;
+  background-position: -320px 0;
   width: 43px; height: 39px;
 }
 input[type=checkbox].vacant + label
 {
-  background-position: -1546px 0;
+  background-position: -744px 0;
+  width: 38px;
 }
 
 /*Class6 = Yellow*/
 #CondoClass6:checked + label
 {
   background-position: -490px 0;
-  width: 30px; height: 40px;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass6:checked + label
 {
-  background-position: -1184px 0;
+  background-position: -373px 0;
   width: 43px; height: 39px;
 }
 #VacantClass6:checked + label
 {
-  background-position: -1854px 0;
+  background-position: -792px 0;
+  width: 38px;
 }
 
 /*Class5 = Green*/
 #CondoClass5:checked + label
 {
-  background-position: -175px 0;
-  width: 30px; height: 40px;
+  background-position: -80px 0;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass5:checked + label
 {
-  background-position: -752px 0;
+  background-position: -426px 0;
   width: 43px; height: 39px;
 }
 #VacantClass5:checked + label
 {
-  background-position: -1458px 0;
+  background-position: -840px 0;
+  width: 38px;
 }
 
 /*Class4 = Blue*/
 #CondoClass4:checked + label
 {
-  background-position: 0 0;
-  width: 30px; height: 40px;
+  background-position: -120px 0;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass4:checked + label
 {
-  background-position: -560px 0;
+  background-position: -479px 0;
   width: 43px; height: 39px;
 }
 #VacantClass4:checked + label
 {
-  background-position: -1280px 0;
+  background-position: -888px 0;
+  width: 38px;
 }
     
 /*Class3 = Dark Blue*/
 #CondoClass3:checked + label
 {
-  background-position: -35px 0;
-  width: 30px; height: 40px;
+  background-position: -160px 0;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass3:checked + label
 {
-  background-position: -608px 0;
+  background-position: -532px 0;
   width: 43px; height: 39px;
 }
 #VacantClass3:checked + label
 {
-  background-position: -1324px 0;
+  background-position: -936px 0;
+  width: 38px;
 }
 
 /*Class2 = Purple*/
 #CondoClass2:checked + label
 {
-  background-position: -350px 0;
-  width: 30px; height: 40px;
+  background-position: -200px 0;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass2:checked + label
 {
-  background-position: -991px 0;
+  background-position: -585px 0;
   width: 43px; height: 39px;
 }
 #VacantClass2:checked + label
 {
-  background-position: -1678px 0;
+  background-position: -984px 0;
+  width: 38px;
 }
 
 /*Class1 = Red*/
 #CondoClass1:checked + label
 {
-  background-position: -420px 0;
-  width: 30px; height: 40px;
+  background-position: -280px 0;
+  /*width: 30px; height: 40px;*/
 }
 #HouseClass1:checked + label
 {
-  background-position: -1087px 0;
+  background-position: -691px 0;
   width: 43px; height: 39px;
 }
 #VacantClass1:checked + label
 {
-  background-position: -1766px 0;
+  background-position: -1080px 0;
+  width: 38px;
 }
 
 
 /*Class 10 = Orange*/
 #CondoClass10:checked + label
 {
-  background-position: -280px 0;
-  height: 40px; height: 39px;
+  background-position: -240px 0;
+  /*height: 40px; height: 39px;*/
 }
 #HouseClass10:checked + label
 {
-  background-position: -896px 0;
+  background-position: -638px 0;
   width: 43px; height: 39px;
 }
 #VacantClass10:checked + label
 {
-  background-position: -1590px 0;
+  background-position: -1032px 0;
+  width: 38px;
 }
 
-/*Class 11 = Yellow*/
-#CondoClass11:checked + label
-{
-  background-position: -490px 0;
-  width: 30px; height: 40px;
-}
-#HouseClass11:checked + label
-{
-  background-position: -1184px 0;
-  width: 43px; height: 39px;
-}
-#VacantClass11:checked + label
-{
-  background-position: -1854px 0;
-}
+
 
 /*Styles for the toolbar buttons*/
  .esriBasemapIcon {
@@ -862,10 +859,51 @@ input[type=checkbox].vacant + label
   overflow-y:auto !important;
 }
 
-#kellerWilliamsLogo {
+#MelFosterLogo, #FatherDaughterTeam, .ad-links {
   position:absolute;
   top:0px;
+}
+
+#MelFosterLogo {
   left:0px;
+}
+
+#MelFosterLogo img {
+  height: 39px;
+}
+
+#FatherDaughterTeam {
+  left: 195px;
+}
+
+#FatherDaughterTeam img {
+  height:39px;
+  vertical-align: middle;
+}
+
+#FatherDaughterTeam .subtitle {
+  font-style: italic;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
+.ad-links {
+  left: 600px;
+  height: 45px;
+}
+
+.ad-links img {
+  height: 35px;
+  padding: 2px 10px;
+}
+
+.ad-links a {
+  text-decoration: none;
+}
+
+.ad-links .american-bank-trust {
+  border-radius: 4px;
 }
 
 div.mls-map-switcher {
@@ -897,4 +935,9 @@ div.mls-map-switcher span {
   padding: 0 5px;
 }
 
-
+.disclaimer {
+  font-size: 0.9em;
+  color:white;
+  padding: 2px 10px;
+  text-overflow: ellipsis;
+}
