@@ -319,7 +319,7 @@ input[type=checkbox].vacant + label
 /*Class6 = Yellow*/
 #CondoClass6:checked + label
 {
-  background-position: -490px 0;
+  background-position: -40px 0;
   /*width: 30px; height: 40px;*/
 }
 #HouseClass6:checked + label
